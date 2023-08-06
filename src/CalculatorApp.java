@@ -7,7 +7,7 @@ public class CalculatorApp extends JFrame {
         super("Anh Duc Vu's Calculator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
-        this.setSize(840, 840);
+        this.setSize(400, 400);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.setResizable(true);
