@@ -456,6 +456,24 @@ public class CalculatorApp extends JFrame {
                     if (accumulatorLabel.getText().charAt(0) == '-') accumulatorLabel.setText(accumulatorLabel.getText().substring(1));
                     else accumulatorLabel.setText("-" + accumulatorLabel.getText());
                 }
+            } else if (e.getSource() == equalBtn) {
+                int result = 0;
+                Calculator calc = new Calculator();
+                if (operatorLabel.getText().equals(" ")) {
+                    registerLabel.setText(accumulatorLabel.getText());
+                }
+                int decimalAccumulator = Integer.parseInt(accumulatorLabel.getText(), getCurrentBase());
+                int decimalRegister = Integer.parseInt(registerLabel.getText(), getCurrentBase());
+                try {
+                    result = calc.calculate(decimalAccumulator, decimalRegister, operatorLabel.getText());
+                } catch (Calculator.IllegalOperationException ex) {
+                    JOptionPane.showMessageDialog(null, "Illegal Operation", "Error", JOptionPane.ERROR_MESSAGE);
+                } catch (Calculator.InvalidOperandException ex) {
+                    JOptionPane.showMessageDialog(null, "Invalid Operand", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+                accumulatorLabel.setText(" ");
+                registerLabel.setText(Integer.toString(result, getCurrentBase()));
+                operatorLabel.setText(" ");
             }
         }
     }
@@ -468,6 +486,8 @@ public class CalculatorApp extends JFrame {
     }
     public class displayChoiceListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            if (accumulatorLabel.getText().equals(" ")) accumulatorLabel.setText("0");
+            if (registerLabel.getText().equals(" ")) registerLabel.setText("0");
             int decimalAccumulator = Integer.parseInt(accumulatorLabel.getText(), getCurrentBase());
             int decimalRegister = Integer.parseInt(registerLabel.getText(), getCurrentBase());
             if (e.getSource() == dec) {
