@@ -56,22 +56,22 @@ public class Calculator {
             case "%":
                 result = accumulator % operand;
                 break;
-            case "and":
+            case "And":
                 result = accumulator & operand;
                 break;
-            case "nand":
+            case "Nand":
                 result = ~(accumulator & operand);
                 break;
-            case "or":
+            case "Or":
                 result = accumulator | operand;
                 break;
-            case "xor":
+            case "Xor":
                 result = accumulator ^ operand;
                 break;
-            case "not":
+            case "Not":
                 result = ~accumulator;
                 break;
-            case "nor":
+            case "Nor":
                 result = ~(accumulator | operand);
                 break;
             default:
