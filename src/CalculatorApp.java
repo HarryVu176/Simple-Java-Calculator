@@ -1,3 +1,10 @@
+/**
+ * CalculatorApp.java
+ * Purpose: GUI for the calculator
+ * Coder: Anh Duc Vu (1057322)
+ * Date: Aug 7, 2023
+ */
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,7 +15,9 @@ public class CalculatorApp extends JFrame {
     private JMenuBar mb;
     private JButton helpBtn = new JButton("Help"), aboutBtn = new JButton("About"), calcBtn = new JButton("Calculator");
     private JRadioButton dec, hex, oct, bin;
+    // Panels for the calculator
     private JPanel displayChoicePanel, helpPanel, aboutPanel, calcButtonPanel, underPanel, upperPanel, cards, card1;
+    // Buttons for the calculator
     private JButton aBtn, andBtn, leftShiftBtn, rightShiftBtn, clrBtn, backBtn
             , bBtn, nandBtn, multiplyBtn, divideBtn, plusBtn, minusBtn
             , cBtn, orBtn, sevenBtn, eightBtn, nineBtn, modBtn
@@ -20,7 +29,9 @@ public class CalculatorApp extends JFrame {
     private CardLayout cardLayout;
 
 
-
+    /**
+     * Constructor
+     */
     public CalculatorApp() {
         super("Anh Duc Vu's Calculator");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,6 +57,9 @@ public class CalculatorApp extends JFrame {
 
     }
 
+    /**
+     * Build the card layout for the calculator
+     */
     private void buildCardLayout() {
         cards = new JPanel(new CardLayout());
         cardLayout = (CardLayout) cards.getLayout();
@@ -57,6 +71,9 @@ public class CalculatorApp extends JFrame {
         cards.add(aboutPanel, "About");
     }
 
+    /**
+     * Build the calculator panel
+     */
     private void buildCard1Panel() {
         card1 = new JPanel();
         card1.setLayout(new BoxLayout(card1, BoxLayout.Y_AXIS));
@@ -65,6 +82,10 @@ public class CalculatorApp extends JFrame {
         card1.add(upperPanel);
         card1.add(underPanel);
     }
+
+    /**
+     * Build the upper panel of calculator (accumulator, operator, register)
+     */
     private void buildUpperPanel() {
         upperPanel = new JPanel();
         upperPanel.setLayout(new BoxLayout(upperPanel, BoxLayout.Y_AXIS));
@@ -84,6 +105,10 @@ public class CalculatorApp extends JFrame {
         upperPanel.add(operatorLabel);
         upperPanel.add(registerLabel);
     }
+
+    /**
+     * Put both calc button and display choice together (buttons and display choice)
+     */
     private void buildUnderPanel() {
         underPanel = new JPanel();
         underPanel.setLayout(new BoxLayout(underPanel, BoxLayout.X_AXIS));
@@ -93,6 +118,9 @@ public class CalculatorApp extends JFrame {
         underPanel.add(calcButtonPanel);
     }
 
+    /**
+     * Build the button panel of calculator
+     */
     private void buildCalcButtonPanel() {
         calcButtonPanel = new JPanel();
         calcButtonPanel.setLayout(new GridLayout(6, 6));
@@ -215,6 +243,10 @@ public class CalculatorApp extends JFrame {
         equalBtn.addActionListener(new calcBtnListener());
         clroBtn.addActionListener(new calcBtnListener());
     }
+
+    /**
+     * Builds the display choice panel.
+     */
     private void buildDisplayChoicePanel() {
         displayChoicePanel = new JPanel();
         displayChoicePanel.setLayout(new BoxLayout(displayChoicePanel, BoxLayout.Y_AXIS));
@@ -238,6 +270,9 @@ public class CalculatorApp extends JFrame {
         displayChoicePanel.add(bin);
     }
 
+    /**
+     * Builds the help panel.
+     */
     private void buildHelpPanel() {
         helpPanel = new JPanel();
         helpPanel.setLayout(new BorderLayout());
@@ -255,6 +290,9 @@ public class CalculatorApp extends JFrame {
 
     }
 
+    /**
+     * Builds the about panel.
+     */
     private void buildAboutPanel() {
         aboutPanel = new JPanel();
         aboutPanel.setLayout(new BorderLayout());
@@ -276,6 +314,7 @@ public class CalculatorApp extends JFrame {
 
     public class menuBarListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            // Switch to the appropriate card when the user selects
             if (e.getSource() == helpBtn) {
                 cardLayout.show(cards, "Help");
             } else if (e.getSource() == aboutBtn) {
@@ -288,11 +327,12 @@ public class CalculatorApp extends JFrame {
 
     public class calcBtnListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            // Apply same for the rest
             if (e.getSource() == aBtn) {
-                if (accumulatorLabel.getText().equals(" ")) accumulatorLabel.setText("A");
-                else if (!operatorLabel.getText().equals(" ") && registerLabel.getText().equals(" "))
+                if (accumulatorLabel.getText().equals(" ")) accumulatorLabel.setText("A"); // if accumulator is empty, set accumulator to A
+                else if (!operatorLabel.getText().equals(" ") && registerLabel.getText().equals(" ")) // if operator is not empty and register is empty, set register to A
                     registerLabel.setText("A");
-                else if (!operatorLabel.getText().equals(" ") && !registerLabel.getText().equals(" "))
+                else if (!operatorLabel.getText().equals(" ") && !registerLabel.getText().equals(" ")) // if operator is not empty and register is not empty, append A to register
                     registerLabel.setText(registerLabel.getText() + "A");
                 else accumulatorLabel.setText(accumulatorLabel.getText() + "A");
             } else if (e.getSource() == bBtn) {
@@ -478,6 +518,10 @@ public class CalculatorApp extends JFrame {
         }
     }
 
+    /**
+     * This method returns the current base of the calculator
+     * @return the current base of the calculator
+     */
     private int getCurrentBase() {
         if (aBtn.isEnabled()) return 16;
         if (!threeBtn.isEnabled()) return 2;
@@ -491,6 +535,7 @@ public class CalculatorApp extends JFrame {
             int decimalAccumulator = Integer.parseInt(accumulatorLabel.getText(), getCurrentBase());
             int decimalRegister = Integer.parseInt(registerLabel.getText(), getCurrentBase());
             if (e.getSource() == dec) {
+                // disable the buttons that are not needed
                 aBtn.setEnabled(false);
                 bBtn.setEnabled(false);
                 cBtn.setEnabled(false);

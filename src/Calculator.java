@@ -1,3 +1,10 @@
+/**
+ * Calculator.java
+ * Purpose: This class will calculate the result of the operation
+ * Coder: Anh Duc Vu (1057322)
+ * Date: Aug 7, 2023
+ */
+
 public class Calculator {
 
     public class InvalidOperandException extends Exception
@@ -16,6 +23,15 @@ public class Calculator {
         }
     }
 
+    /**
+     * This method will calculate the result of the operation
+     * @param accumulator
+     * @param operand
+     * @param operator
+     * @return result
+     * @throws IllegalOperationException
+     * @throws InvalidOperandException
+     */
     public int calculate(int accumulator, int operand, String operator) throws IllegalOperationException, InvalidOperandException {
         int result = 0;
 
