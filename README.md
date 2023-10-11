@@ -10,7 +10,9 @@
 
 **Video Demo**:
 
-https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/0c8a95ab-5c1d-4a91-9d4a-8ae5822f0c42
+https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/dfe42436-97e7-4d02-b82a-942aa571a20c
+
+
 
 
 
