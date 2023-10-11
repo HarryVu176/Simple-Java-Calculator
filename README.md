@@ -2,6 +2,7 @@
 <h1 align="center">Simple Java Calculator</h1>
 </div>
 <center>📱 Simple Calculator written in Java, with bitwise operation and different types of number to display (Decimal, Hexadecimal, Octal, Binary)</center>
+<br></br>
 
 **Image Demo**:
 
