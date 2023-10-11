@@ -2,7 +2,7 @@
 
 📱 Simple Calculator written in Java, with bitwise operation and different types of number to display (Decimal, Hexadecimal, Octal, Binary)
 
-Image Demo:
+**Image Demo**:
 
 ![image](https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/991be7e0-6bef-4123-a0b5-f065cc1b06ff)
 
@@ -14,7 +14,7 @@ Image Demo:
 
 ![image](https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/5a551ea4-85c1-44a2-b0ea-361d5e27cc81)
 
-Video Demo:
+**Video Demo**:
 
 https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/0c8a95ab-5c1d-4a91-9d4a-8ae5822f0c42
 
