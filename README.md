@@ -4,15 +4,9 @@
 
 **Image Demo**:
 
-![image](https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/991be7e0-6bef-4123-a0b5-f065cc1b06ff)
+![image](https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/5b0aca0c-eb78-4103-8512-c2dc5e81214c)
 
-![image](https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/05458063-32b9-4b02-90e4-92e5b3efd3a8)
-
-![image](https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/80064968-8d8e-4766-b492-f83cfe281675)
-
-![image](https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/79b8a750-a8b5-4f7e-a919-5cf7cfb2e027)
-
-![image](https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/5a551ea4-85c1-44a2-b0ea-361d5e27cc81)
+![image](https://github.com/HarryVu176/Simple-Java-Calculator/assets/56937827/a04307c9-154d-4ca2-8d7e-7c5f4e38e787)
 
 **Video Demo**:
 
